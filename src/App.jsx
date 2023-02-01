@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Button from './Button'
 import Alert from './Alert'
 import { FiAlertOctagon } from 'react-icons/fi';
+import Badge from './Badge';
 
 function App() {
 
@@ -56,12 +57,53 @@ function App() {
           </div>
 
         </div>
+
+        <div className='flex flex-col gap-4 my-4'>
+          <h2 className='text-3xl'>Badge</h2>
+          <div>
+            <p>Badge with no attribute props and default values:</p>
+            <Badge title="Default Badge" />
+          </div>
+
+          <div>
+            <p>Badge with an icon, but no style attribute props:</p>
+            <Badge Icon={FiAlertOctagon} title="Default Icon Badge" />
+          </div>
+
+          <div>
+            <p>Badge with an icon and color attribute purple:</p>
+            <Badge Icon={FiAlertOctagon} color="purple" title="Purple Badge" />
+          </div>
+
+          <div>
+            <p>Badge with color red and round attribute:</p>
+            <Badge color="red" title="Round Badge" round />
+          </div>
+
+          <div>
+            <p>Badge with large attribute:</p>
+            <Badge title="Large Badge" size="large" />
+          </div>
+
+          <div>
+            <p>Badge with an icon, large and color attribute yellow:</p>
+            <Badge Icon={FiAlertOctagon} color="yellow" title="Large Icon Badge" size="large" />
+          </div>
+
+          <div>
+            <p>Badge with xlarge attribute:</p>
+            <Badge title="Extra Large Badge" size="xlarge" />
+          </div>
+
+          <div>
+            <p>Badge with an icon, xlarge and color attribute yellow:</p>
+            <Badge Icon={FiAlertOctagon} color="yellow" title="Extra Large Icon Badge" size="xlarge" />
+          </div>
+
+
+
+        </div>
       </div>
-
-
-
-
-
     </div>
   )
 }
