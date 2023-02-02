@@ -12,6 +12,10 @@ const Button = (props) => {
 
         sizeAtt = `py-6 px-8 text-xl`;
 
+    } else if (size === 'small') {
+
+        sizeAtt = `py-1 px-4 text-sm rounded-lg h-8`;
+
     }
 
     let colorAtt = `bg-blue-500 hover:bg-blue-600 border-blue-100 text-white`;
@@ -39,6 +43,10 @@ const Button = (props) => {
     } else if (color === 'gray') {
 
         colorAtt = `bg-gray-500 hover:bg-gray-400 border-gray-100 text-white`;
+
+    } else if (color === 'slate') {
+
+        colorAtt = `bg-slate-700 hover:bg-slate-800 border-slate-300 hover:border-slate-50 text-slate-50`;
 
     }
 

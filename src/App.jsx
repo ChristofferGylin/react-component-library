@@ -4,6 +4,7 @@ import Alert from "./Alert";
 import { FiAlertOctagon } from "react-icons/fi";
 import Badge from "./Badge";
 import Card from "./Card";
+import Modal from "./Modal";
 
 const cardText = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
                 voluptatibus nisi quibusdam cum debitis aspernatur repellendus
@@ -18,6 +19,7 @@ const onDismiss = () => {
 };
 
 function App() {
+  const [showModal, setShowModal] = useState("hidden");
   return (
     <div className="text-slate-200">
       <h1 className="text-5xl text-center">React Component Library</h1>
@@ -175,6 +177,24 @@ function App() {
               imgAlt="Laptops on a desk in an office"
               href="#"
             />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4 my-4">
+          <h2 className="text-3xl">Modal</h2>
+          <div>
+            <p>Modal without size attribute</p>
+            <Button
+              title="Show Modal"
+              callback={() => {
+                setShowModal("flex");
+              }}
+            />
+            <Modal show={showModal} onClose={setShowModal}>
+              <Modal.Header title="Tea or Cake or Death" />
+              <Modal.Body text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempora soluta sit molestias accusantium. Nesciunt labore ducimus a deleniti ipsam ratione asperiores dolore voluptates adipisci, iure dignissimos pariatur sequi ipsa distinctio illo molestiae? Consequatur qui sit aliquid magnam aliquam delectus vero facilis ex nulla libero laborum fuga commodi voluptatem, corrupti amet omnis perferendis consectetur debitis inventore non labore molestiae numquam. Accusantium dolore repellendus possimus obcaecati eos? Ad enim quis repellat cupiditate neque quos est, nam nemo, quibusdam rerum, fuga quaerat consectetur necessitatibus voluptatum illo assumenda maiores itaque quasi accusamus dolor? Voluptatem, accusantium molestiae! Tempora maxime, explicabo nemo ad placeat obcaecati?" />
+              <Modal.Footer />
+            </Modal>
           </div>
         </div>
       </div>
