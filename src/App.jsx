@@ -13,6 +13,10 @@ const cardText = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperi
                 quam at, hic ipsa repellat culpa, rerum debitis nesciunt
                 recusandae.`;
 
+const onDismiss = () => {
+  alert("You closed the alert.");
+};
+
 function App() {
   return (
     <div className="text-slate-200">
@@ -82,19 +86,21 @@ function App() {
           <h2 className="text-3xl">Alert</h2>
           <div>
             <p>Alert with no attribute props and default values:</p>
-            <Alert>You did something wrong and you should feel bad.</Alert>
+            <Alert onDismiss={onDismiss}>
+              You did something wrong and you should feel bad.
+            </Alert>
           </div>
 
           <div>
             <p>Alert with an icon, but no style attribute props:</p>
-            <Alert Icon={FiAlertOctagon}>
+            <Alert Icon={FiAlertOctagon} onDismiss={onDismiss}>
               You did something wrong and you should feel bad.
             </Alert>
           </div>
 
           <div>
             <p>Alert with an icon and color attribute blue:</p>
-            <Alert Icon={FiAlertOctagon} color="blue">
+            <Alert Icon={FiAlertOctagon} color="blue" onDismiss={onDismiss}>
               You did something wrong and you should feel bad.
             </Alert>
           </div>
