@@ -1,46 +1,85 @@
-import { useState } from 'react'
-import Button from './Button'
-import Alert from './Alert'
-import { FiAlertOctagon } from 'react-icons/fi';
-import Badge from './Badge';
+import { useState } from "react";
+import Button from "./Button";
+import Alert from "./Alert";
+import { FiAlertOctagon } from "react-icons/fi";
+import Badge from "./Badge";
+import Card from "./Card";
+
+const cardText = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+                voluptatibus nisi quibusdam cum debitis aspernatur repellendus
+                rem sed quae maxime, eos quia doloribus veritatis ipsa deserunt
+                labore similique pariatur exercitationem ducimus! Nostrum nam
+                eaque deserunt, esse deleniti voluptatibus accusantium fugiat
+                quam at, hic ipsa repellat culpa, rerum debitis nesciunt
+                recusandae.`;
 
 function App() {
-
   return (
     <div className="text-slate-200">
-      <h1 className='text-5xl text-center'>React Component Library</h1>
+      <h1 className="text-5xl text-center">React Component Library</h1>
 
-      <div className='flex flex-col gap-4 my-8 px-12 py-6 rounded-xl w-3/4 bg-slate-600 mx-auto'>
-        <div className='flex flex-col gap-4'>
-          <h2 className='text-3xl'>Button</h2>
+      <div className="flex flex-col gap-4 my-8 px-12 py-6 rounded-xl w-3/4 bg-slate-600 mx-auto">
+        <div className="flex flex-col gap-4">
+          <h2 className="text-3xl">Button</h2>
           <div>
             <p>Button with no attribute props and default values:</p>
-            <Button callback={() => { alert('Heyoo') }} title="Default Button" />
+            <Button
+              callback={() => {
+                alert("Heyoo");
+              }}
+              title="Default Button"
+            />
           </div>
 
           <div>
             <p>Button with disabled attribute and default style:</p>
-            <Button callback={() => { alert('Heyoo') }} title="Default Button" disabled />
+            <Button
+              callback={() => {
+                alert("Heyoo");
+              }}
+              title="Default Button"
+              disabled
+            />
           </div>
 
           <div>
             <p>Button with color attribute Purple:</p>
-            <Button callback={() => { alert('Heyoo') }} color="purple" title="Purple Button" />
+            <Button
+              callback={() => {
+                alert("Heyoo");
+              }}
+              color="purple"
+              title="Purple Button"
+            />
           </div>
 
           <div>
             <p>Button with color attribute Purple and size attribute large:</p>
-            <Button callback={() => { alert('Heyoo') }} color="purple" size="large" title="Purple Button" />
+            <Button
+              callback={() => {
+                alert("Heyoo");
+              }}
+              color="purple"
+              size="large"
+              title="Purple Button"
+            />
           </div>
 
           <div>
             <p>Button with color attribute gray and size attribute xlarge:</p>
-            <Button callback={() => { alert('Heyoo') }} color="gray" size="xlarge" title="Purple Button" />
+            <Button
+              callback={() => {
+                alert("Heyoo");
+              }}
+              color="gray"
+              size="xlarge"
+              title="Purple Button"
+            />
           </div>
         </div>
 
-        <div className='flex flex-col gap-4 my-4'>
-          <h2 className='text-3xl'>Alert</h2>
+        <div className="flex flex-col gap-4 my-4">
+          <h2 className="text-3xl">Alert</h2>
           <div>
             <p>Alert with no attribute props and default values:</p>
             <Alert>You did something wrong and you should feel bad.</Alert>
@@ -48,18 +87,21 @@ function App() {
 
           <div>
             <p>Alert with an icon, but no style attribute props:</p>
-            <Alert Icon={FiAlertOctagon}>You did something wrong and you should feel bad.</Alert>
+            <Alert Icon={FiAlertOctagon}>
+              You did something wrong and you should feel bad.
+            </Alert>
           </div>
 
           <div>
             <p>Alert with an icon and color attribute blue:</p>
-            <Alert Icon={FiAlertOctagon} color="blue">You did something wrong and you should feel bad.</Alert>
+            <Alert Icon={FiAlertOctagon} color="blue">
+              You did something wrong and you should feel bad.
+            </Alert>
           </div>
-
         </div>
 
-        <div className='flex flex-col gap-4 my-4'>
-          <h2 className='text-3xl'>Badge</h2>
+        <div className="flex flex-col gap-4 my-4">
+          <h2 className="text-3xl">Badge</h2>
           <div>
             <p>Badge with no attribute props and default values:</p>
             <Badge title="Default Badge" />
@@ -87,7 +129,12 @@ function App() {
 
           <div>
             <p>Badge with an icon, large and color attribute yellow:</p>
-            <Badge Icon={FiAlertOctagon} color="yellow" title="Large Icon Badge" size="large" />
+            <Badge
+              Icon={FiAlertOctagon}
+              color="yellow"
+              title="Large Icon Badge"
+              size="large"
+            />
           </div>
 
           <div>
@@ -97,15 +144,36 @@ function App() {
 
           <div>
             <p>Badge with an icon, xlarge and color attribute yellow:</p>
-            <Badge Icon={FiAlertOctagon} color="yellow" title="Extra Large Icon Badge" size="xlarge" />
+            <Badge
+              Icon={FiAlertOctagon}
+              color="yellow"
+              title="Extra Large Icon Badge"
+              size="xlarge"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4 my-4">
+          <h2 className="text-3xl">Card</h2>
+          <div>
+            <p>Card with no image:</p>
+            <Card title="This is a card" text={cardText} href="#" />
           </div>
 
-
-
+          <div>
+            <p>Card with image:</p>
+            <Card
+              title="This is a card"
+              text={cardText}
+              imgSrc="./officespace.jpg"
+              imgAlt="Laptops on a desk in an office"
+              href="#"
+            />
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
