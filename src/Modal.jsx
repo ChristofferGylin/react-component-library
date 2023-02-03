@@ -57,32 +57,14 @@ const Body = (props) => {
 };
 
 const Footer = (props) => {
-  const { size } = props;
+  const { size, children } = props;
+
+
 
   let sizeAtt = `text-lg`;
   return (
     <div className="flex justify-center gap-4 w-full absolute bottom-0 left-0 bg-slate-900/60 py-2">
-      <Button size="small"
-        color="slate"
-        callback={() => {
-          alert("You chose tea");
-        }}
-        title="Tea"
-      />
-      <Button size="small"
-        color="slate"
-        callback={() => {
-          alert("You chose tea");
-        }}
-        title="Cake"
-      />
-      <Button size="small"
-        color="slate"
-        callback={() => {
-          alert("You chose tea");
-        }}
-        title="Death"
-      />
+      {children}
     </div>
   );
 };

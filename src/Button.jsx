@@ -1,6 +1,8 @@
+import { colors, colorsHover } from "./colors";
+
 const Button = (props) => {
 
-    const { size, color, disabled, title, callback } = props;
+    let { size, color, disabled, title, callback } = props;
 
     let sizeAtt = `py-2 px-4 text-base`;
 
@@ -18,35 +20,37 @@ const Button = (props) => {
 
     }
 
-    let colorAtt = `bg-blue-500 hover:bg-blue-600 border-blue-100 text-white`;
+    if (color === undefined) {
 
-    if (disabled) {
-
-        colorAtt = `bg-blue-400 border-blue-100 text-white`;
+        color = `slate`;
 
     }
 
-    if (color === 'purple') {
+    const colorSplit = color.split('-');
+    let colorAtt;
 
-        if (disabled) {
 
-            colorAtt = `bg-purple-300 border-purple-100 text-white`;
+    if (colorSplit.length > 1) {
+
+        console.log('length +1')
+
+        if (colorSplit[1] === 'light') {
+
+            colorAtt = `${colors.light[colorSplit[0]]} ${colorsHover.light[colorSplit[0]]}`;
+
+        } else if (colorSplit[1] === 'dark') {
+
+            colorAtt = `${colors.dark[colorSplit[0]]} ${colorsHover.dark[colorSplit[0]]}`;
 
         } else {
 
-            colorAtt = `bg-purple-500 hover:bg-purple-400 border-purple-100 text-white`;
+            colorAtt = `${colors.normal[colorSplit[0]]} ${colorsHover.normal[colorSplit[0]]}`;
 
         }
 
+    } else {
 
-
-    } else if (color === 'gray') {
-
-        colorAtt = `bg-gray-500 hover:bg-gray-400 border-gray-100 text-white`;
-
-    } else if (color === 'slate') {
-
-        colorAtt = `bg-slate-700 hover:bg-slate-800 border-slate-300 hover:border-slate-50 text-slate-50`;
+        colorAtt = `${colors.normal[colorSplit[0]]} ${colorsHover.normal[colorSplit[0]]}`;
 
     }
 
@@ -55,9 +59,9 @@ const Button = (props) => {
     if (disabled) {
 
         disabledAtt = true;
+        colorAtt = colors.disabled[colorSplit[0]]
 
     }
-
 
 
     return (

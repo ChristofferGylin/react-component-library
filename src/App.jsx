@@ -27,6 +27,8 @@ function App() {
       <div className="flex flex-col gap-4 my-8 px-12 py-6 rounded-xl w-3/4 bg-slate-600 mx-auto">
         <div className="flex flex-col gap-4">
           <h2 className="text-3xl">Button</h2>
+
+
           <div>
             <p>Button with no attribute props and default values:</p>
             <Button
@@ -34,54 +36,45 @@ function App() {
                 alert("Heyoo");
               }}
               title="Default Button"
+              color="fuchsia-light"
             />
           </div>
 
           <div>
-            <p>Button with disabled attribute and default style:</p>
+            <p>Button with no attribute props and default values:</p>
             <Button
               callback={() => {
                 alert("Heyoo");
               }}
               title="Default Button"
+              color="fuchsia-normal"
+            />
+          </div>
+
+          <div>
+            <p>Button with no attribute props and default values:</p>
+            <Button
+              callback={() => {
+                alert("Heyoo");
+              }}
+              title="Default Button"
+              color="fuchsia-dark"
+            />
+          </div>
+
+          <div>
+            <p>Button with no attribute props and default values:</p>
+            <Button
+              callback={() => {
+                alert("Heyoo");
+              }}
+              title="Default Button"
+              color="fuchsia-dark"
               disabled
             />
           </div>
 
-          <div>
-            <p>Button with color attribute Purple:</p>
-            <Button
-              callback={() => {
-                alert("Heyoo");
-              }}
-              color="purple"
-              title="Purple Button"
-            />
-          </div>
 
-          <div>
-            <p>Button with color attribute Purple and size attribute large:</p>
-            <Button
-              callback={() => {
-                alert("Heyoo");
-              }}
-              color="purple"
-              size="large"
-              title="Purple Button"
-            />
-          </div>
-
-          <div>
-            <p>Button with color attribute gray and size attribute xlarge:</p>
-            <Button
-              callback={() => {
-                alert("Heyoo");
-              }}
-              color="gray"
-              size="xlarge"
-              title="Purple Button"
-            />
-          </div>
         </div>
 
         <div className="flex flex-col gap-4 my-4">
@@ -180,7 +173,7 @@ function App() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 my-4">
+        {/* <div className="flex flex-col gap-4 my-4">
           <h2 className="text-3xl">Modal</h2>
           <div>
             <p>Modal without size attribute</p>
@@ -191,12 +184,34 @@ function App() {
               }}
             />
             <Modal show={showModal} onClose={setShowModal}>
-              <Modal.Header title="Tea or Cake or Death" />
+              <Modal.Header title="Tea or Cake or Death?" />
               <Modal.Body text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempora soluta sit molestias accusantium. Nesciunt labore ducimus a deleniti ipsam ratione asperiores dolore voluptates adipisci, iure dignissimos pariatur sequi ipsa distinctio illo molestiae? Consequatur qui sit aliquid magnam aliquam delectus vero facilis ex nulla libero laborum fuga commodi voluptatem, corrupti amet omnis perferendis consectetur debitis inventore non labore molestiae numquam. Accusantium dolore repellendus possimus obcaecati eos? Ad enim quis repellat cupiditate neque quos est, nam nemo, quibusdam rerum, fuga quaerat consectetur necessitatibus voluptatum illo assumenda maiores itaque quasi accusamus dolor? Voluptatem, accusantium molestiae! Tempora maxime, explicabo nemo ad placeat obcaecati?" />
-              <Modal.Footer />
+              <Modal.Footer>
+                <Button size="small"
+                  color="slate"
+                  callback={() => {
+                    alert("You chose tea");
+                  }}
+                  title="Tea"
+                />
+                <Button size="small"
+                  color="slate"
+                  callback={() => {
+                    alert("You chose tea");
+                  }}
+                  title="Cake"
+                />
+                <Button size="small"
+                  color="slate"
+                  callback={() => {
+                    alert("You chose tea");
+                  }}
+                  title="Death"
+                />
+              </Modal.Footer>
             </Modal>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
