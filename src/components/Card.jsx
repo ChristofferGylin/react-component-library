@@ -8,14 +8,14 @@ const Card = (props) => {
     return (
       <a href={href}>
         <div
-          className={`flex flex-col md:flex-row rounded-xl ${commonAttOuter}`}
+          className={`flex flex-col lg:flex-row rounded-xl ${commonAttOuter}`}
         >
           <img
             src={imgSrc}
             alt={imgAlt}
-            className="object-cover w-full h-96 md:w-1/2 md:h-auto"
+            className="object-cover w-full h-96 lg:w-1/2 lg:h-auto"
           />
-          <div className={`${commonAttInner} w-full md:w1/2`}>
+          <div className={`${commonAttInner} w-full lg:w1/2`}>
             <Content title={title} text={text} />
           </div>
         </div>

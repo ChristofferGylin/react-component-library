@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Button from "./Button";
-import Alert from "./Alert";
+import Button from "./components/Button";
+import Alert from "./components/Alert";
 import { FiAlertOctagon } from "react-icons/fi";
-import Badge from "./Badge";
-import Card from "./Card";
-import Modal from "./Modal";
+import Badge from "./components/Badge";
+import Card from "./components/Card";
+import Modal from "./components/Modal";
 
 const cardText = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
                 voluptatibus nisi quibusdam cum debitis aspernatur repellendus

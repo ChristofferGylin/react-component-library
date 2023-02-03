@@ -16,7 +16,7 @@ const Button = (props) => {
 
     } else if (size === 'small') {
 
-        sizeAtt = `py-1 px-4 text-sm rounded-lg h-8`;
+        sizeAtt = `py-1 px-4 text-sm rounded-lg h-8 min-w-min`;
 
     }
 
@@ -31,8 +31,6 @@ const Button = (props) => {
 
 
     if (colorSplit.length > 1) {
-
-        console.log('length +1')
 
         if (colorSplit[1] === 'light') {
 
@@ -66,7 +64,7 @@ const Button = (props) => {
 
     return (
 
-        <button onClick={callback} className={`border rounded-xl ${sizeAtt} ${colorAtt}`} disabled={disabledAtt}>{title}</button>
+        <button onClick={callback} className={`border rounded-xl ${sizeAtt} ${colorAtt} capitalize`} disabled={disabledAtt}>{title}</button>
 
     )
 
