@@ -25,7 +25,7 @@ export default function (props) {
     return (
 
         <div className="bg-slate-700 w-full rounded-lg px-8  pt-2 pb-8 my-6">
-            <h3 className="uppercase my-2">{size}</h3>
+            <h3 className="uppercase my-2 text-xl">{size}</h3>
             <div className="grid gap-4">
                 {names.map((name) => {
 

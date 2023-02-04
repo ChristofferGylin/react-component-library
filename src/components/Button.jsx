@@ -1,4 +1,5 @@
 import { colors, colorsHover } from "./colors";
+import selectColorAtt from "./selectColorAtt";
 
 const Button = (props) => {
 
@@ -20,51 +21,11 @@ const Button = (props) => {
 
     }
 
-    if (color === undefined) {
-
-        color = `slate`;
-
-    }
-
-    const colorSplit = color.split('-');
-    let colorAtt;
-
-
-    if (colorSplit.length > 1) {
-
-        if (colorSplit[1] === 'light') {
-
-            colorAtt = `${colors.light[colorSplit[0]]} ${colorsHover.light[colorSplit[0]]}`;
-
-        } else if (colorSplit[1] === 'dark') {
-
-            colorAtt = `${colors.dark[colorSplit[0]]} ${colorsHover.dark[colorSplit[0]]}`;
-
-        } else {
-
-            colorAtt = `${colors.normal[colorSplit[0]]} ${colorsHover.normal[colorSplit[0]]}`;
-
-        }
-
-    } else {
-
-        colorAtt = `${colors.normal[colorSplit[0]]} ${colorsHover.normal[colorSplit[0]]}`;
-
-    }
-
-    let disabledAtt = false;
-
-    if (disabled) {
-
-        disabledAtt = true;
-        colorAtt = colors.disabled[colorSplit[0]]
-
-    }
-
+    const attributes = selectColorAtt(color, disabled);
 
     return (
 
-        <button onClick={callback} className={`border rounded-xl ${sizeAtt} ${colorAtt} capitalize`} disabled={disabledAtt}>{title}</button>
+        <button onClick={callback} className={`border rounded-xl ${sizeAtt} ${attributes.colorAtt} capitalize`} disabled={attributes.disabledAtt}>{title}</button>
 
     )
 
