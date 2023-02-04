@@ -1,9 +1,8 @@
-import { colors, colorsHover } from "./colors";
 import selectColorAtt from "./selectColorAtt";
 
 const Button = (props) => {
 
-    let { size, color, disabled, title, callback } = props;
+    let { size, color, disabled, title, callback, hidden } = props;
 
     let sizeAtt = `py-2 px-4 text-base`;
 
@@ -21,11 +20,19 @@ const Button = (props) => {
 
     }
 
+    let hiddenAtt = ``;
+
+    if (hidden) {
+
+        hiddenAtt = "sm:hidden lg:block"
+
+    }
+
     const attributes = selectColorAtt(color, disabled);
 
     return (
 
-        <button onClick={callback} className={`border rounded-xl ${sizeAtt} ${attributes.colorAtt} capitalize`} disabled={attributes.disabledAtt}>{title}</button>
+        <button onClick={callback} className={`${hiddenAtt} border rounded-xl ${sizeAtt} ${attributes.colorAtt} capitalize`} disabled={attributes.disabledAtt}>{title}</button>
 
     )
 

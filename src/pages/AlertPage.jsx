@@ -2,18 +2,20 @@ import Alert from "../components/Alert";
 import { colorNames } from "./colorNames";
 import { FiAlertOctagon } from "react-icons/fi";
 import { FiShield } from "react-icons/fi";
-//import { FaBomb } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 const observerCallback = (e) => {
 
     e.forEach(element => {
+
+
         if (element.isIntersecting) {
 
-            element.target.classList.remove('translate-x-[100%]');
+            element.target.children[0].classList.remove('translate-x-[120%]');
 
         } else {
 
-            element.target.classList.add('translate-x-[100%]');
+            element.target.children[0].classList.add('translate-x-[120%]');
 
         }
     });
@@ -21,79 +23,66 @@ const observerCallback = (e) => {
 }
 
 const options = {
-    root: document.querySelector('body'),
-    rootMargin: '0px',
-    threshold: 0.01
+    root: document.querySelector('#alertMainContainer'),
+    rootMargin: '150px',
+    threshold: 1
 }
 
-const observer = new IntersectionObserver(observerCallback, options);
+const onDismiss = (element) => {
 
-const alerts = document.querySelectorAll('.alertItem');
+    element.current.classList.add('translate-x-[120%]');
 
-alerts.forEach((alertItem) => {
-
-
-    observer.observe(alertItem);
-
-})
-
-
-
-const onDismiss = () => {
-    alert("You closed the alert.");
 };
 
 
 export default function AlertPage() {
 
+    const [observer, setObserver] = useState(new IntersectionObserver(observerCallback, options))
+
+    useEffect(() => {
+
+        const alertContainers = document.querySelectorAll('.alertItemContainer');
+
+        alertContainers.forEach((container) => {
+
+            observer.observe(container);
+
+        })
+
+    }, []);
+
     return (
 
-        <div>
+        <div id="alertMainContainer">
             <h2 className="text-3xl">Alert</h2>
 
             <div className="grid grid-cols-1 gap-8 bg-slate-700 w-full rounded-lg px-8  pt-8 pb-8 my-6 overflow-hidden">
 
                 {colorNames.all.map((name, index) => {
 
-                    if (index === 0) {
-
-                        <Alert onDismiss={onDismiss} color={name}>
-                            You did something wrong and you should feel bad.
-                        </Alert>
-
-                    } else if (index % 3 === 0) {
-
-                        <Alert Icon={FiAlertOctagon} color={name} onDismiss={onDismiss}>
-                            You did something wrong and you should feel bad.
-                        </Alert>
-
-                    } else if (index % 2 === 0) {
-
-                        <Alert Icon={FiShield} color={name} onDismiss={onDismiss}>
-                            You did something wrong and you should feel bad.
-                        </Alert>
-
-                    }
-
                     return (
 
                         <div className="grid grid-cols-1 gap-8" key={`alertContainer${index}`}>
 
-                            <Alert onDismiss={onDismiss} color={`${name}-light`} key={`alertLight${index}`}>
-                                You did something wrong and you should feel bad.
-                            </Alert>
+                            <div id={`alertItemContainer-light-${index}`}>
+                                <Alert onDismiss={onDismiss} color={`${name}-light`} key={`alertLight${index}`}>
+                                    You did something wrong and you should feel bad.
+                                </Alert>
+                            </div>
 
-                            <Alert Icon={FiAlertOctagon} color={`${name}-normal`} onDismiss={onDismiss} key={`alertNormal${index}`}>
-                                You did something wrong and you should feel bad.
-                            </Alert>
+                            <div id={`alertItemContainer-normal-${index}`}>
+                                <Alert Icon={FiAlertOctagon} color={`${name}-normal`} onDismiss={onDismiss} key={`alertNormal${index}`}>
+                                    You did something wrong and you should feel bad.
+                                </Alert>
+                            </div>
 
-                            <Alert Icon={FiShield} color={`${name}-dark`} onDismiss={onDismiss} key={`alertDark${index}`}>
-                                You did something wrong and you should feel bad.
-                            </Alert>
+                            <div id={`alertItemContainer-dark-${index}`}>
+                                <Alert Icon={FiShield} color={`${name}-dark`} onDismiss={onDismiss} key={`alertDark${index}`}>
+                                    You did something wrong and you should feel bad.
+                                </Alert>
+                            </div>
                         </div>
-
                     )
-
                 })}
             </div>
         </div>

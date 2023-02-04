@@ -2,7 +2,7 @@ import Button from "../../components/Button";
 
 export default function (props) {
 
-    const { names, size, maxCols } = props;
+    const { names, size } = props;
 
     let cols;
 
@@ -33,7 +33,7 @@ export default function (props) {
 
                         return (
                             <div className={`grid grid-cols-1 sm:grid-cols-2 ${cols} gap-4`} key={`${name}Container${size}`}>
-                                <Button key={`${name}LightButton${size}`} size={size} color={`${name}-light`} title={`${name} light`} />
+                                <Button hidden key={`${name}LightButton${size}`} size={size} color={`${name}-light`} title={`${name} light`} />
                                 <Button key={`${name}NormalButton${size}`} size={size} color={`${name}-normal`} title={`${name} normal`} />
                                 <Button key={`${name}DarkButton${size}`} size={size} color={`${name}-dark`} title={`${name} dark`} />
                             </div>
@@ -49,10 +49,7 @@ export default function (props) {
                                 <Button key={`${name}DisabledButton${size}`} size={size} color={`${name}-dark`} title={`${name} disabled`} disabled />
                             </div>
                         )
-
                     }
-
-
                 })}
             </div>
         </div>
