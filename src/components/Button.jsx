@@ -2,7 +2,7 @@ import selectColorAtt from "./selectColorAtt";
 
 const Button = (props) => {
 
-    let { size, color, disabled, title, callback, hidden } = props;
+    let { size, color = 'slate', disabled, title, callback, round, hidden } = props;
 
     let sizeAtt = `py-2 px-4 text-base`;
 
@@ -16,7 +16,7 @@ const Button = (props) => {
 
     } else if (size === 'small') {
 
-        sizeAtt = `py-1 px-4 text-sm rounded-lg h-8 min-w-min`;
+        sizeAtt = `py-1 px-4 text-sm h-8 min-w-min`;
 
     }
 
@@ -28,11 +28,33 @@ const Button = (props) => {
 
     }
 
+    let rounded;
+
+    if (round) {
+
+        rounded = `rounded-full`;
+
+    } else {
+
+        if (size === 'small') {
+
+            rounded = `rounded-lg`;
+
+        } else {
+
+            rounded = `rounded-xl`;
+
+        }
+
+
+
+    }
+
     const attributes = selectColorAtt(color, disabled);
 
     return (
 
-        <button onClick={callback} className={`${hiddenAtt} border rounded-xl ${sizeAtt} ${attributes.colorAtt} capitalize`} disabled={attributes.disabledAtt}>{title}</button>
+        <button onClick={callback} className={`${hiddenAtt} border ${rounded} ${sizeAtt} ${attributes.colorAtt} capitalize`} disabled={attributes.disabledAtt}>{title}</button>
 
     )
 

@@ -2,7 +2,7 @@ import Button from "../../components/Button";
 
 export default function (props) {
 
-    const { names, size } = props;
+    let { names, size, round = false, title } = props;
 
     let cols;
 
@@ -25,7 +25,7 @@ export default function (props) {
     return (
 
         <div className="bg-slate-700 w-full rounded-lg px-8  pt-2 pb-8 my-6">
-            <h3 className="uppercase my-2 text-xl">{size}</h3>
+            <h3 className="uppercase my-2 text-xl">{title}</h3>
             <div className="grid gap-4">
                 {names.map((name) => {
 
@@ -33,9 +33,9 @@ export default function (props) {
 
                         return (
                             <div className={`grid grid-cols-1 sm:grid-cols-2 ${cols} gap-4`} key={`${name}Container${size}`}>
-                                <Button hidden key={`${name}LightButton${size}`} size={size} color={`${name}-light`} title={`${name} light`} />
-                                <Button key={`${name}NormalButton${size}`} size={size} color={`${name}-normal`} title={`${name} normal`} />
-                                <Button key={`${name}DarkButton${size}`} size={size} color={`${name}-dark`} title={`${name} dark`} />
+                                <Button hidden key={`${name}LightButton${size}`} size={size} color={`${name}-light`} title={`${name} light`} round={round} />
+                                <Button key={`${name}NormalButton${size}`} size={size} color={`${name}-normal`} title={`${name} normal`} round={round} />
+                                <Button key={`${name}DarkButton${size}`} size={size} color={`${name}-dark`} title={`${name} dark`} round={round} />
                             </div>
                         )
 
@@ -43,10 +43,10 @@ export default function (props) {
 
                         return (
                             <div className={`grid grid-cols-1 sm:grid-cols-2 ${cols} gap-4`} key={`${name}Container${size}`}>
-                                <Button key={`${name}LightButton${size}`} size={size} color={`${name}-light`} title={`${name} light`} />
-                                <Button key={`${name}NormalButton${size}`} size={size} color={`${name}-normal`} title={`${name} normal`} />
-                                <Button key={`${name}DarkButton${size}`} size={size} color={`${name}-dark`} title={`${name} dark`} />
-                                <Button key={`${name}DisabledButton${size}`} size={size} color={`${name}-dark`} title={`${name} disabled`} disabled />
+                                <Button key={`${name}LightButton${size}`} size={size} color={`${name}-light`} title={`${name} light`} round={round} />
+                                <Button key={`${name}NormalButton${size}`} size={size} color={`${name}-normal`} title={`${name} normal`} round={round} />
+                                <Button key={`${name}DarkButton${size}`} size={size} color={`${name}-dark`} title={`${name} dark`} round={round} />
+                                <Button key={`${name}DisabledButton${size}`} size={size} color={`${name}-dark`} title={`${name} disabled`} round={round} disabled />
                             </div>
                         )
                     }

@@ -53,7 +53,7 @@ export default function Home() {
                     <p>Badge with an icon, large and color attribute yellow:</p>
                     <Badge
                         Icon={FiAlertOctagon}
-                        color="yellow"
+                        color="purple-dark"
                         title="Large Icon Badge"
                         size="large"
                     />
