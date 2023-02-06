@@ -8,7 +8,7 @@ const Card = (props) => {
     return (
       <a href={href}>
         <div
-          className={`flex flex-col lg:flex-row rounded-xl ${commonAttOuter}`}
+          className={`flex flex-col justify-center items-center lg:flex-row rounded-xl ${commonAttOuter}`}
         >
           <img
             src={imgSrc}
