@@ -90,27 +90,20 @@ export default function Home() {
                         }}
                     />
                     <Modal show={showModal} onClose={setShowModal}>
-                        <Modal.Header title="Tea or Cake or Death?" />
+                        <Modal.Header title="Tea and Cake or Death?" />
                         <Modal.Body text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempora soluta sit molestias accusantium. Nesciunt labore ducimus a deleniti ipsam ratione asperiores dolore voluptates adipisci, iure dignissimos pariatur sequi ipsa distinctio illo molestiae? Consequatur qui sit aliquid magnam aliquam delectus vero facilis ex nulla libero laborum fuga commodi voluptatem, corrupti amet omnis perferendis consectetur debitis inventore non labore molestiae numquam. Accusantium dolore repellendus possimus obcaecati eos? Ad enim quis repellat cupiditate neque quos est, nam nemo, quibusdam rerum, fuga quaerat consectetur necessitatibus voluptatum illo assumenda maiores itaque quasi accusamus dolor? Voluptatem, accusantium molestiae! Tempora maxime, explicabo nemo ad placeat obcaecati?" />
                         <Modal.Footer>
                             <Button size="small"
                                 color="slate"
                                 callback={() => {
-                                    alert("You chose tea");
+                                    alert("Allright then, here´s your tea and cake.");
                                 }}
-                                title="Tea"
+                                title="Tea and Cake"
                             />
                             <Button size="small"
                                 color="slate"
                                 callback={() => {
-                                    alert("You chose tea");
-                                }}
-                                title="Cake"
-                            />
-                            <Button size="small"
-                                color="slate"
-                                callback={() => {
-                                    alert("You chose tea");
+                                    alert("You chose death!");
                                 }}
                                 title="Death"
                             />

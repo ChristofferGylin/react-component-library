@@ -54,7 +54,7 @@ const Button = (props) => {
 
     return (
 
-        <button onClick={callback} className={`${hiddenAtt} border ${rounded} ${sizeAtt} ${attributes.colorAtt} capitalize`} disabled={attributes.disabledAtt}>{title}</button>
+        <button onClick={callback} className={`overflow-hidden ${hiddenAtt} border ${rounded} ${sizeAtt} ${attributes.colorAtt} capitalize`} disabled={attributes.disabledAtt}>{title}</button>
 
     )
 
