@@ -1,5 +1,4 @@
 import { AiOutlineClose } from "react-icons/ai";
-import Button from "./Button";
 
 const Modal = (props) => {
   const { show, onClose, size, children } = props;
@@ -59,9 +58,6 @@ const Body = (props) => {
 const Footer = (props) => {
   const { size, children } = props;
 
-
-
-  let sizeAtt = `text-lg`;
   return (
     <div className="flex justify-center gap-4 w-full absolute bottom-0 left-0 bg-slate-900/60 py-2">
       {children}
@@ -70,7 +66,6 @@ const Footer = (props) => {
 };
 
 const closeBlackout = (e, onClose) => {
-  console.log(e.target.id);
   if (e.target.id === "blackout") {
     onClose("hidden");
   }

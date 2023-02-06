@@ -45,12 +45,8 @@ export default function ModalPage() {
                     <div>
                         <img src="./modal.png" alt="Screenshot of modal pop-up" className="border border-slate-300 rounded" />
                     </div>
-
-
-
                 </div>
             </div>
-
         </div>
     )
 
