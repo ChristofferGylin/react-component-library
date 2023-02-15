@@ -10,6 +10,8 @@ import BadgePage from './pages/BadgePage';
 import ButtonPage from './pages/ButtonPage';
 import CardPage from './pages/CardPage';
 import ModalPage from './pages/ModalPage';
+import RatingPage from './pages/RatingPage';
+import ProgressBarPage from './pages/ProgressBarPage';
 
 const router = createBrowserRouter([
   {
@@ -37,8 +39,16 @@ const router = createBrowserRouter([
         element: <CardPage />
       },
       {
-        path: "Modal",
+        path: "modal",
         element: <ModalPage />
+      },
+      {
+        path: "rating",
+        element: <RatingPage />
+      },
+      {
+        path: "progress",
+        element: <ProgressBarPage />
       },
 
     ]

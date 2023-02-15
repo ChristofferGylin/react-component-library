@@ -1,4 +1,5 @@
 import selectColorNoHover from "./selectColorNoHover";
+import { colors } from "./colors";
 
 const Badge = (props) => {
 
@@ -7,7 +8,7 @@ const Badge = (props) => {
     let commonAtt = `flex items-center w-fit justify-self-center`;
     let sizeAtt = 'p-3 gap-2 text-base';
 
-    let colorAtt = selectColorNoHover(color);
+    let colorAtt = selectColorNoHover(color, colors);
 
 
     if (round) {

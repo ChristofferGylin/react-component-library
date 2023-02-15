@@ -28,6 +28,12 @@ export default function Root() {
                             <li className='hover:underline underline-offset-4'>
                                 <Link to={"/modal"}>Modal</Link>
                             </li>
+                            <li className='hover:underline underline-offset-4'>
+                                <Link to={"/progress"}>Progress Bar</Link>
+                            </li>
+                            <li className='hover:underline underline-offset-4'>
+                                <Link to={"/rating"}>Rating</Link>
+                            </li>
                         </ul>
                     </nav>
                 </header>

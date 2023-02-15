@@ -1,6 +1,6 @@
-import { colors } from "./colors";
+//import { colors } from "./colors";
 
-export default function (color) {
+export default function (color, colors) {
 
     if (color === undefined) {
 

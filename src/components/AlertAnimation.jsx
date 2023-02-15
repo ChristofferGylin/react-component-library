@@ -3,22 +3,13 @@ import { AiOutlineClose } from "react-icons/ai";
 import selectColorNoHover from "./selectColorNoHover";
 import { colors } from "./colors";
 
-const Alert = (props) => {
+const AlertAnimation = (props) => {
 
-  const { color, Icon, children, onDismiss, demo } = props;
-
-  let animation = ``;
-
-  if (demo) {
-
-    animation = 'animate-alert'
-
-  }
-
+  const { color, Icon, children, onDismiss, translate } = props;
   const elementRef = useRef(null);
   const commonAtt = `w-full px-4 py-6 rounded-xl relative`;
   const colorAtt = selectColorNoHover(color, colors);
-  const transitionAtt = `transition-transform ease-in-out delay-100 duration-700 ${animation}`
+  const transitionAtt = `transition-transform ease-in-out delay-100 duration-700 ${translate}`
   const shadowAtt = `shadow-md shadow-slate-900/30`;
 
   if (Icon) {
@@ -53,4 +44,4 @@ const Alert = (props) => {
   }
 };
 
-export default Alert;
+export default AlertAnimation;
